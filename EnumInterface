@@ -1,0 +1,18 @@
+package com.trinadh.EnumExample;
+import java.util.*;
+public class Basic {
+
+        enum Week {
+            monday,tuesday,wednesday,thursday,friday,saturday,sunday
+        }
+
+    public static void main(String[] args) {
+        Week week;
+        week = Week.monday;
+        System.out.println("week : "+ week);
+
+        for (Week day: Week.values()){
+            System.out.println(day);
+        }
+    }
+}
