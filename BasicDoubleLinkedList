@@ -1,0 +1,63 @@
+//create a double linked list and insert some elements into that and then print the elements.
+
+
+package com.trinadh.doubleLL;
+
+public class DLL {
+
+    private Node head;
+
+    public void insertFirst(int val){
+        //first create node box
+        Node node = new Node(val);
+        node.next = head;
+        node.prev = null;
+        if(head != null){
+            head.prev = node;
+        }
+        head = node;
+    }
+
+    public void display(){
+        Node temp = head;
+
+        while(temp != null){
+            System.out.print(temp.val + "->");
+            temp = temp.next;
+        }
+        System.out.println("END");
+    }
+
+    private class Node{
+        int val;
+        Node next;
+        Node prev;
+
+        public Node(int val) {
+            this.val = val;
+        }
+
+        public Node(Node next, Node prev) {
+            this.next = next;
+            this.prev = prev;
+        }
+    }
+}
+//=================================================================================================
+package com.trinadh.doubleLL;
+
+public class Main {
+    public static void main(String[] args) {
+        DLL doubleList = new DLL();
+        doubleList.display();
+        doubleList.insertFirst(2);
+        doubleList.insertFirst(3);
+        doubleList.insertFirst(4);
+        doubleList.insertFirst(5);
+        doubleList.insertFirst(6);
+        doubleList.insertFirst(7);
+        doubleList.display();
+
+
+    }
+}

@@ -1,0 +1,18 @@
+public void display(){
+        Node temp = head;
+        Node revPrintl = null;
+
+        while(temp != null){
+            System.out.print(temp.val + " -> ");
+            revPrintl = temp;
+            temp = temp.next;
+        }
+        System.out.println("END");
+
+        System.out.println("print in reverse :  ");
+        while(revPrintl != null){
+            System.out.print(revPrintl.val + " -> ");
+            revPrintl = revPrintl.prev;
+        }
+        System.out.print("END\n");
+    }
