@@ -1,0 +1,66 @@
+package com.java.Collections;
+
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+public class MapsDemo {
+    public static void main(String args[]){
+
+        /**
+         *
+         * hashMap : {vaibhav=20, vishal=10, sachin=30}  (not maintain Insertion Order);
+         * linkedHashMap : {vishal=10, sachin=30, vaibhav=20}  (maintain insertion order);
+         */
+        Map<String,Integer> hashMap = new HashMap<>();
+        System.out.println(hashMap);
+        hashMap.put("vishal", 10);
+        hashMap.put("sachin", 30);
+        hashMap.put("vaibhav", 20);
+        System.out.println("hashMap : " + hashMap);
+
+        hashMap.put("vishal",5); //updating the existing key
+        hashMap.remove("sachin"); //removing the existing key
+        System.out.println("hashMap : " + hashMap);
+
+        //traversing through for each type 1:
+        for(Map.Entry<String,Integer> me: hashMap.entrySet()){
+            System.out.print(me.getKey() + " = " + me.getValue() + ",");
+
+        }
+
+        System.out.println("=================================");
+        //traversing through for each type 2:
+        for (Map.Entry mapElement : hashMap.entrySet()) {
+
+            String key = (String) mapElement.getKey();
+            // Finding the value
+             int  value = (int)mapElement.getValue();
+            System.out.println(key + " : " + value);
+        }
+
+        //#############################################################################################
+        System.out.println();
+
+        Map<String,Integer> linkedHashMap = new LinkedHashMap<>();
+        linkedHashMap.put("vishal", 10);
+        linkedHashMap.put("sachin", 30);
+        linkedHashMap.put("vaibhav", 20);
+        System.out.println("linkedHashMap : " + linkedHashMap);
+
+        //traversing or iterating type 1:
+        for(Map.Entry<String,Integer> me: linkedHashMap.entrySet()){
+            System.out.println(me.getKey() + " = " + me.getValue()+ " ,");
+        }
+        
+        System.out.println("==============================================");
+        //traversing through for each type 2:
+        for (Map.Entry mapElement : linkedHashMap.entrySet()) {
+
+            String key = (String) mapElement.getKey();
+            // Finding the value
+            int  value = (int)mapElement.getValue();
+            System.out.println(key + " : " + value);
+        }
+    }
+}
