@@ -1,0 +1,40 @@
+package com.java.Collections_IMP;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ListInterface {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+        list.add(1);
+        list.add(2);
+
+        for(Integer l: list){
+            System.out.print(l + " ");
+        }
+        System.out.println("\nlist : "+list);
+        System.out.println();
+        ArrayList<Integer> arrList = new ArrayList<>();
+        arrList.add(3);
+        arrList.add(4);
+
+        for(Integer arL : arrList){
+            System.out.print(arL + " ");
+        }
+        System.out.println("\narrList : "+ arrList);
+
+        List<Integer> nestedList;
+        ArrayList<Integer> nestedArrList = new ArrayList<>();
+        for(int i = 0; i < 3; i++){
+
+            nestedList = new ArrayList<>();
+
+            nestedList.add(i);
+            nestedList.add(i+1);
+
+            nestedArrList.addAll(nestedList);
+        }
+
+        System.out.println("nestedArrList : "+nestedArrList);
+    }
+}
