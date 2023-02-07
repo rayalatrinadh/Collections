@@ -1,0 +1,47 @@
+package com.java.Collections_IMP;
+
+import java.util.HashMap;
+
+public class HashMapDemo {
+    public static void main(String[] args) {
+
+
+        HashMap<Integer,Integer> hashMap = new HashMap<>();
+
+        int[] arr = new int[]{2,3,4,5,6,7,8,91,10,11};
+
+        int count = 0;
+        for(int arrValue : arr){
+            hashMap.put(arrValue ,count++);
+        }
+
+        System.out.println("print HashMap in Java : "+hashMap);
+        // O/P : {0=2,1=3,2=4,3=5,4=6,5=7,6=8,7=9,8=10,9=11}
+
+        System.out.println("get in HashMap :  "+ hashMap.get(91)); //hashMap.get(objectKey)
+        // O/P : get the index of ObjectKey   (value = 4 for index 2)
+
+        System.out.println("containsKey in HashMap : "+hashMap.containsKey(9));
+        //O/P : if the key is present print True //boolean output
+
+        System.out.println("containsValue in HashMap : "+ hashMap.containsValue(91));
+
+        //check the key if the hashMap contains key then take the index of the key (key is an array)
+        System.out.println(hashMap.containsKey(arr[0]));
+        System.out.println(arr[0]);
+
+        System.out.println(hashMap.get(arr[0])); // o/p : 0 is index // get means getting the index of the value in hashMap
+
+
+        for(HashMap.Entry<Integer,Integer> map : hashMap.entrySet()){
+            System.out.println("key : " + map.getKey() + " value : " + map.getValue());
+        }
+
+        //size of the hashMap
+        System.out.println("size of the map : "+hashMap.size());
+
+
+
+
+    }
+}
