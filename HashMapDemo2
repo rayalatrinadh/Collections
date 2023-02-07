@@ -1,0 +1,29 @@
+package com.java.Collections_IMP;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class HashMapDemo02 {
+    public static void main(String[] args) {
+
+
+        HashMap<String,Integer> hashMap1 = new HashMap<>();
+
+        hashMap1.put("trinadh",1);
+        hashMap1.put("chandu",2);
+        hashMap1.put("rakhi",3);
+
+        System.out.println("hashMap1 : " + hashMap1);
+
+        HashMap<String,Integer> hashMap2 = new HashMap<>(hashMap1);
+        System.out.println("hashMap2 : "+hashMap2);
+
+        System.out.println(hashMap2.size());
+        System.out.println(hashMap2.entrySet());
+
+        for(Map.Entry<String,Integer> map : hashMap1.entrySet()){
+            System.out.println("get Key : " + map.getKey() + " get Value : " + map.getValue());
+        }
+
+    }
+}
